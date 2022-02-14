@@ -1,0 +1,34 @@
+<%
+/**
+ * Aljohn Nazaire
+ * 301063347
+ * Winter 2022
+ */
+%>
+
+<%- include partials/header.ejs %>
+
+  <%- include partials/main_nav.ejs %>
+
+    <main class="container">
+      <% if (title=="Home" ) { %>
+        <%- include partials/home.ejs %>
+
+          <% } else if(title=="About" ) { %>
+            <%- include partials/about.ejs %>
+
+              <% } else if(title=="Project" ) { %>
+                <%- include partials/project.ejs %>
+
+                  <% } else if(title=="Services" ) { %>
+                    <%- include partials/services.ejs %>\
+
+                      <% } else if(title=="Contact" ) { %>
+                        <%- include partials/contact.ejs %>
+                          <%}%>
+
+
+    </main>
+
+
+    <%- include partials/footer.ejs %>
