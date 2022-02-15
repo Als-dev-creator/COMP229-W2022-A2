@@ -1,21 +1,90 @@
-<%
-/**
- * Aljohn Nazaire
- * 301063347
- * Winter 2022
- */
-%>
+<!--File: header.ejs 
+    Aljohn Nazaire 
+    301063347 
+    Winter 2022  
+    Last updated: 2022-02-14-->
+
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!--CSS-->
-  <link rel='stylesheet' href='/content/stylesheets/app.css' />
-  <link rel="stylesheet" href='/bootstrap/dist/css/bootstrap.min.css'>
-  <link rel="stylesheet" href="/@fortawesome/fontawesome-free/css/all.min.css">
-  <title><%= title %></title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--CSS-->
+    <link rel="stylesheet" href="/content/stylesheets/app.css" />
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="/@fortawesome/fontawesome-free/css/all.min.css"
+    />
+    <title><%= title %></title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img
+            src="/assests/images/user.jpg"
+            alt="logo"
+            width="50"
+            height="50"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <% if (title =="home") { %>
+            <li class="nav-item active"><%} else {%></li>
+
+            <li class="nav-item">
+              <% } %>
+              <a class="nav-link" href="/home"> Home </a>
+            </li>
+
+            <% if (title =="about") { %>
+            <li class="nav-item active"><%} else {%></li>
+
+            <li class="nav-item">
+              <% } %>
+              <a class="nav-link" href="/about"> About </a>
+            </li>
+
+            <% if(title =="project") { %>
+            <li class="nav-item active"><%} else {%></li>
+
+            <li class="nav-item">
+              <% } %>
+              <a class="nav-link" href="/project"> Project</a>
+            </li>
+
+            <% if(title =="services") { %>
+            <li class="nav-item active"><%} else {%></li>
+
+            <li class="nav-item">
+              <% } %>
+              <a class="nav-link" href="/services"> Services</a>
+            </li>
+
+            <% if(title =="contact") { %>
+            <li class="nav-item active"><%} else {%></li>
+
+            <li class="nav-item">
+              <% } %>
+              <a class="nav-link" href="/contact"> Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>

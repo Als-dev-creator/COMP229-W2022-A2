@@ -3,7 +3,7 @@
  * Aljohn Nazaire
  * 301063347
  * Winter 2022
- * Last updated: 2022-02-12
+ * Last updated: 2022-02-14
  */
 
 // installed 3rd party packages
@@ -12,6 +12,9 @@ let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
+let session = require('express-session')
+let flash = require('connect-flash');
+let passport = require('passport');
 
 
 let indexRouter = require('../routes/index');
@@ -19,6 +22,12 @@ let usersRouter = require('../routes/users');
 let businessRouter = require('../routes/business');
 
 let app = express();
+
+app.use(session({
+    saveUninitialized: true,
+    resave: true,
+    secret: "sessionSecret"
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, '../views'));
@@ -30,6 +39,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
+
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

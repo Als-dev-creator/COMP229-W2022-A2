@@ -1,34 +1,17 @@
-<%
-/**
- * Aljohn Nazaire
- * 301063347
- * Winter 2022
- */
-%>
+<!--File: error.ejs 
+    Aljohn Nazaire 
+    301063347 
+    Winter 2022  
+    Last updated: 2022-02-14-->
 
-<%- include partials/header.ejs %>
+<%- include partials/header.ejs %> <%- include partials/main_nav.ejs %>
 
-  <%- include partials/main_nav.ejs %>
+<main class="container">
+  <% if (title=="Home" ) { %> <%- include partials/home.ejs %> <% } else
+  if(title=="About" ) { %> <%- include partials/about.ejs %> <% } else
+  if(title=="Project" ) { %> <%- include partials/project.ejs %> <% } else
+  if(title=="Services" ) { %> <%- include partials/services.ejs %>\ <% } else
+  if(title=="Contact" ) { %> <%- include partials/contact.ejs %> <%}%>
+</main>
 
-    <main class="container">
-      <% if (title=="Home" ) { %>
-        <%- include partials/home.ejs %>
-
-          <% } else if(title=="About" ) { %>
-            <%- include partials/about.ejs %>
-
-              <% } else if(title=="Project" ) { %>
-                <%- include partials/project.ejs %>
-
-                  <% } else if(title=="Services" ) { %>
-                    <%- include partials/services.ejs %>\
-
-                      <% } else if(title=="Contact" ) { %>
-                        <%- include partials/contact.ejs %>
-                          <%}%>
-
-
-    </main>
-
-
-    <%- include partials/footer.ejs %>
+<%- include partials/footer.ejs %>
