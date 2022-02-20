@@ -4,14 +4,19 @@
     Winter 2022  
     Last updated: 2022-02-14-->
 
-<%- include partials/header.ejs %> <%- include partials/main_nav.ejs %>
+<%- include partials/header.ejs %>
 
 <main class="container">
-  <% if (title=="Home" ) { %> <%- include partials/home.ejs %> <% } else
-  if(title=="About" ) { %> <%- include partials/about.ejs %> <% } else
-  if(title=="Project" ) { %> <%- include partials/project.ejs %> <% } else
-  if(title=="Services" ) { %> <%- include partials/services.ejs %>\ <% } else
-  if(title=="Contact" ) { %> <%- include partials/contact.ejs %> <%}%>
+  <% if (title=="Home" ) { %> <%- include content/home.ejs %> <% } else
+  if(title=="About" ) { %> <%- include content/about.ejs %> <% } else
+  if(title=="Project" ) { %> <%- include content/project.ejs %> <% } else
+  if(title=="Services" ) { %> <%- include content/services.ejs %> <% } else
+  if(title=="Contact" ) { %> <%- include content/contact.ejs %> <% } else
+  if(title =="Business List") { %> <%- include
+  content/business/business-list.ejs %> <% } else if(title == "Add Contact") {
+  %> <%- include content/business/add-business.ejs %> <% } else if(title ==
+  "Edit Business") { %> <%- include content/business/edit-business.ejs %> <% }
+  else if(title == "Sign-in Form") { %> <%- include auth/signin.ejs %> <% } %>
 </main>
 
 <%- include partials/footer.ejs %>

@@ -1,0 +1,62 @@
+<!--File: edit-business.ejs 
+    Aljohn Nazaire 
+    301063347 
+    Winter 2022  
+    Last updated: 2022-02-19-->
+
+<div class="row justify-content-md-center">
+  <div class="col-8">
+    <h1 class="display-4" style="text-align: center">Business List</h1>
+    <hr class="my-4" />
+    <form method="POST">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          aria-describedby="name"
+          name="name"
+          placeholder="Enter business Name"
+          value="<%=data.name %>"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="number">Phone Number</label>
+        <input
+          type="text"
+          class="form-control"
+          id="number"
+          aria-describedby="number"
+          name="number"
+          placeholder="Enter business Number"
+          value="<%=data.number %>"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <textarea
+          class="form-control"
+          id="email"
+          rows="1"
+          name="email"
+          placeholder="Enter business Email"
+          value="<%=data.email %>"
+          required
+        >
+        </textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg">
+        <i class="fas fa-edit"></i> Update business
+      </button>
+      <a href="/business-list" class="btn btn-warning btn-lg"
+        ><i class="fas fa-undo"></i> Cancel</a
+      >
+    </form>
+  </div>
+</div>

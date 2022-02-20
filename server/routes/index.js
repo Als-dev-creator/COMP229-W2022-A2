@@ -3,41 +3,30 @@
  * Aljohn Nazaire
  * 301063347
  * Winter 2022
- * Last updated: 2022-02-12
+ * Last updated: 2022-02-19
  */
 
-let express = require('express');
+let express = require("express");
 let router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-    res.render('index', { title: 'Home' });
-});
+let indexController = require("../controllers/index");
 
-router.get('/home', function(req, res, next) {
-    res.render('index', { title: 'Home' });
-});
+/* GET home page. */
+router.get("/", indexController.DisplayHomePage);
+
+/* GET home page. */
+router.get("/home", indexController.DisplayHomePage);
+
+/* GET Project page. */
+router.get("/project", indexController.DisplayProjectPage);
+
+/* GET Services page. */
+router.get("/services", indexController.DisplayServicesPage);
 
 /* GET About page. */
-router.get('/about', function(req, res, next) {
-    res.render('index', { title: 'About' });
-});
-
-/* GET project page. */
-router.get('/project', function(req, res, next) {
-    res.render('index', { title: 'Project' });
-});
-
-/* GET Service page. */
-router.get('/services', function(req, res, next) {
-    res.render('index', { title: 'Services' });
-});
+router.get("/about", indexController.DisplayAboutPage);
 
 /* GET Contact page. */
-router.get('/contact', function(req, res, next) {
-    res.render('index', { title: 'Contact' });
-});
-
-
+router.get("/contact", indexController.DisplayContactPage);
 
 module.exports = router;

@@ -1,0 +1,60 @@
+<!--File: add-business.ejs 
+    Aljohn Nazaire 
+    301063347 
+    Winter 2022  
+    Last updated: 2022-02-19-->
+<% include ../../partials/header.ejs %>
+<div class="row justify-content-md-center">
+  <div class="col-8">
+    <h1 class="display-4" style="text-align: center">Add Business</h1>
+    <body>
+      <form method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            aria-describedby="name"
+            name="name"
+            placeholder="Enter Business Name"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="number">Phone Number</label>
+          <input
+            type="text"
+            class="form-control"
+            id="number"
+            aria-describedby="number"
+            name="number"
+            placeholder="Enter Business Number"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <textarea
+            class="form-control"
+            id="email"
+            rows="3"
+            name="email"
+            placeholder="Enter Business Email"
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg">
+          <i class="fas fa-plus-circle"></i> Add Business Contact
+        </button>
+        <a href="/business-list" class="btn btn-warning btn-lg"
+          ><i class="fas fa-undo"></i> Cancel</a
+        >
+      </form>
+    </body>
+  </div>
+</div>
+<% include ../../partials/footer.ejs %>

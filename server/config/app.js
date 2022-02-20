@@ -3,7 +3,7 @@
  * Aljohn Nazaire
  * 301063347
  * Winter 2022
- * Last updated: 2022-02-14
+ * Last updated: 2022-02-19
  */
 
 // installed 3rd party packages
@@ -15,7 +15,6 @@ let logger = require('morgan');
 let session = require('express-session')
 let flash = require('connect-flash');
 let passport = require('passport');
-
 
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');

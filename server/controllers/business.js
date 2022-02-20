@@ -3,7 +3,7 @@
  * Aljohn Nazaire
  * 301063347
  * Winter 2022
- * Last updated: 2022-02-12
+ * Last updated: 2022-02-19
  */
 
 let express = require('express');
@@ -13,27 +13,31 @@ let mongoose = require('mongoose');
 
 let Business = require('../models/business');
 
-module.exports.DisplayBusinessList = (req, res, next) => {
 
+
+module.exports.DisplayBusinessList = (req, res, next) => {
     Business.Model.find((err, data) => {
         if (err) {
             console.error(err);
             res.end()
         } else {
-            console.log(data)
             res.render('index', {
                 title: 'Business List',
-                businessess: data,
-                displayName: req.user ? req.user.displayName : ''
+                business: data,
+                name: req.user ? req.user.name : ''
             });
         }
-    }).collation({ locale: 'en', strength: 2 }).sort({ name: 1 });
+    })
 
-}
+};
 
 module.exports.DisplayAddPage = (req, res, next) => {
-    res.render('index', { title: 'Add Contact' });
-}
+
+    res.render('content/business/add-business', {
+        title: 'Add Business',
+        userName: req.user ? req.user.username : '' 
+    });          
+};
 
 module.exports.ProcessAddPage = (req, res, next) => {
 
@@ -50,6 +54,7 @@ module.exports.ProcessAddPage = (req, res, next) => {
             console.log(err);
             res.end(err);
         }
+        console.log(Business);
         res.redirect('/business-list');
     });
 }
@@ -67,10 +72,10 @@ module.exports.DisplayEditPage = (req, res, next) => {
         res.render('index', {
             title: 'Edit Business',
             data: BusinessToEdit,
-            displayName: req.user ? req.user.displayName : ''
+            name: req.user ? req.user.username : ''
         });
     });
-}
+};
 
 module.exports.ProcessEditPage = (req, res, next) => {
     let id = req.params.id;

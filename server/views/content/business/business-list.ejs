@@ -1,0 +1,61 @@
+<!--File: business-list.ejs 
+    Aljohn Nazaire 
+    301063347 
+    Winter 2022  
+    Last updated: 2022-02-19-->
+<main class="container">
+  <div class="row">
+    <h1><%= title %></h1>
+    <br />
+    <div class="ml-5">
+      <a
+        href="business-list/add"
+        class="btn btn-primary align-self-end"
+        role="button"
+      >
+        <i class="fas fa-plus-circle"></i>
+        Add a new Item
+      </a>
+    </div>
+
+    <div class="table-responsive mt-5">
+      <table class="table table-bordered table-striped table-hover">
+        <!-- Header Row-->
+        <tr>
+          <th class="text-center">Name</th>
+          <th class="text-center">Number</th>
+          <th class="text-center">Email</th>
+
+          <th class="text-center" colspan="2">Actions</th>
+        </tr>
+
+        <!-- Repeatable Template Row -->
+
+        <% for(let count = 0; count < business.length; count++) { %>
+        <tr>
+          <td class="text-center"><%= business[count].name %></td>
+          <td class="text-center"><%= business[count].number %></td>
+          <td class="text-center"><%= business[count].email %></td>
+
+          <td class="text-center">
+            <a
+              href="/business-list/edit/<%= business[count]._id %>"
+              class="btn btn-primary btn-sm"
+            >
+              <i class="fas fa-pencil-alt"></i
+            ></a>
+          </td>
+          <td class="text-center">
+            <a
+              href="/business-list/delete/<%= business[count]._id %>"
+              class="btn btn-danger btn-sm"
+            >
+              <i class="fas fa-trash-alt"></i
+            ></a>
+          </td>
+        </tr>
+        <% } %>
+      </table>
+    </div>
+  </div>
+</main>

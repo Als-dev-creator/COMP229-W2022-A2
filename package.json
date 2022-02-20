@@ -1,32 +1,43 @@
 {
-    "name": "assignment1",
-    "version": "1.0.0",
-    "private": true,
-    "scripts": {
-        "start": "node ./server.js"
-    },
-    "engines": {
-        "node": "16.13.2",
-        "npm": "^8.1.2"
-    },
-    "dependencies": {
-        "@fortawesome/fontawesome-free": "^5.15.4",
-        "bootstrap": "^4.5.3",
-        "connect-flash": "^0.1.1",
-        "cookie-parser": "~1.4.4",
-        "debug": "~2.6.9",
-        "ejs": "~2.6.1",
-        "ejs-lint": "^1.2.1",
-        "express": "~4.16.1",
-        "express-session": "^1.17.2",
-        "http-errors": "~1.6.3",
-        "jquery": "^3.6.0",
-        "mongoose": "^6.0.10",
-        "morgan": "~1.9.1",
-        "passport": "^0.5.2",
-        "passport-local": "^1.0.0",
-        "popper.js": "^1.16.1"
-    },
-    "description": "Assignment1",
-    "main": "server.js"
+  "name": "assignment2",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./server.js"
+  },
+  "engines": {
+    "node": "16.14.0",
+    "npm": "^8.3.1"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "bootstrap": "^4.5.3",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "ejs-lint": "^1.2.1",
+    "express": "~4.16.1",
+    "express-session": "^1.17.2",
+    "http-errors": "~1.6.3",
+    "jquery": "^3.6.0",
+    "mongoose": "^6.0.10",
+    "morgan": "~1.9.1",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0",
+    "popper.js": "^1.16.1"
+  },
+  "description": "Assignment1",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Als-dev-creator/COMP229-W2022-A2.git"
+  },
+  "author": "Aljohn Nazaire",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Als-dev-creator/COMP229-W2022-A2/issues"
+  },
+  "homepage": "https://github.com/Als-dev-creator/COMP229-W2022-A2#readme"
 }
